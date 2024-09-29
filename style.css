@@ -37,11 +37,27 @@ ul {
 }
 
 ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
     background: #eee;
     margin-bottom: 5px;
     border-radius: 5px;
     font-size: 18px;
+}
+
+ul li button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+ul li button:hover {
+    background-color: #218838;
 }
 
 ul li.completed {
