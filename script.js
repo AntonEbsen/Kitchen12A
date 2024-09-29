@@ -25,7 +25,7 @@ function loadTasks() {
     const taskList = document.getElementById('task-list');
     taskList.innerHTML = '';  // Nulstil opgavelisten
 
-    if (person) {
+    if (person !== "") {  // Tjek at der er valgt en person
         tasks.forEach(task => {
             const li = document.createElement('li');
             li.textContent = task;
