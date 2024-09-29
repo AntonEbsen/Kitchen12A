@@ -3,12 +3,12 @@
 // Prædefinerede opgaver for alle personer
 const tasks = [
     "Take out the trash",
-    "Wipe the kitchen counter with all-purpose cleaner and a cloth",
+    "Wipe the kitchen counter with universal cleaner and a cloth",
     "Clean the sink with all-purpose cleaner, followed by descaling solution",
     "Clean the stovetops with stovetop cleaner",
-    "Wipe the windowsill with all-purpose cleaner and a cloth",
-    "Wipe the dining table with all-purpose cleaner and a cloth",
-    "Wipe the coffee table with all-purpose cleaner and a cloth",
+    "Wipe the windowsill with Universal cleaner and a cloth",
+    "Wipe the dining table with Universal cleaner and a cloth",
+    "Wipe the coffee table with Universal cleaner and a cloth",
     "Wipe the TV table",
     "Vacuum the floor",
     "Mop the floor",
@@ -32,7 +32,7 @@ function loadTasks() {
 
             // Opret en knap til at markere opgaven som fuldført
             const completeButton = document.createElement('button');
-            completeButton.textContent = "Fuldført";
+            completeButton.textContent = "Done";
             completeButton.addEventListener('click', () => {
                 li.classList.add('completed');  // Markér opgaven som fuldført
                 completeButton.disabled = true;  // Deaktivér knappen, når opgaven er fuldført
