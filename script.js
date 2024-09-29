@@ -17,9 +17,17 @@ function loadTasks() {
         tasks[person].forEach(task => {
             const li = document.createElement('li');
             li.textContent = task;
-            li.addEventListener('click', () => {
-                li.classList.toggle('completed');  // Marker opgave som fuldført
+
+            // Opret en knap til at markere opgaven som fuldført
+            const completeButton = document.createElement('button');
+            completeButton.textContent = "Fuldført";
+            completeButton.addEventListener('click', () => {
+                li.classList.add('completed');  // Markér opgaven som fuldført
+                completeButton.disabled = true;  // Deaktivér knappen, når opgaven er fuldført
             });
+
+            // Tilføj knappen til opgaven
+            li.appendChild(completeButton);
             taskList.appendChild(li);
         });
     }
