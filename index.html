@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Køkken To-Do Liste</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Køkkenrengøringsplan</h1>
+        
+        <!-- Dropdown for at vælge person -->
+        <label for="person-select">Vælg person:</label>
+        <select id="person-select" onchange="loadTasks()">
+            <option value="">-- Vælg person --</option>
+            <option value="person1">Person 1</option>
+            <option value="person2">Person 2</option>
+            <option value="person3">Person 3</option>
+        </select>
+
+        <!-- Vises opgaverne -->
+        <ul id="task-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
