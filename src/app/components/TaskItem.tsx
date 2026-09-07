@@ -2,6 +2,7 @@
 
 import { useTransition } from 'react';
 import { toggleTask } from '@/app/actions';
+import confetti from 'canvas-confetti';
 
 export default function TaskItem({ 
   task, 
@@ -19,6 +20,14 @@ export default function TaskItem({
   const handleToggle = () => {
     startTransition(() => {
       toggleTask(task, weekNumber, roomId);
+      // Fire confetti if completing a task
+      if (!completed) {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      }
     });
   };
 
