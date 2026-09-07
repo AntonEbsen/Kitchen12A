@@ -1,0 +1,53 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Room {
+  id        Int      @id @default(autoincrement())
+  number    String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Task {
+  id        Int      @id @default(autoincrement())
+  title     String
+  frequency String   // "DAILY" or "WEEKLY"
+  createdAt DateTime @default(now())
+}
+
+model TaskLog {
+  id          Int      @id @default(autoincrement())
+  taskId      Int
+  roomId      Int
+  completedAt DateTime @default(now())
+  weekNumber  Int
+  dayOfYear   Int
+}
+
+model ShoppingItem {
+  id        Int      @id @default(autoincrement())
+  name      String
+  bought    Boolean  @default(false)
+  boughtBy  String?
+  createdAt DateTime @default(now())
+}
+
+model Announcement {
+  id        Int      @id @default(autoincrement())
+  content   String
+  author    String
+  createdAt DateTime @default(now())
+}
+
+model Issue {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  status      String   @default("OPEN")
+  createdAt   DateTime @default(now())
+}
