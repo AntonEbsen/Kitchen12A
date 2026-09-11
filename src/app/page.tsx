@@ -2,21 +2,20 @@ import { getCurrentDutyRoom, getCurrentWeekAndDay } from "@/lib/roster";
 import { getDb, usePostgres, pgGetTaskLogs } from "@/lib/db";
 import TaskItem from "./components/TaskItem";
 
-const dailyTasks = [
-  "Take out the trash",
-  "Wipe the kitchen counter with universal cleaner and a cloth",
-  "Wipe the dining table with Universal cleaner and a cloth",
-  "Wipe the coffee table with Universal cleaner and a cloth",
+const wednesdayTasks = [
+  "Wipe the kitchen counter",
+  "Vacuum",
+  "Take out the recyclable waste",
 ];
 
-const weeklyTasks = [
-  "Clean the sink with all-purpose cleaner, followed by descaling solution",
+const sundayTasks = [
+  "Clean the sink with universal cleaner, followed by descaling solution",
   "Clean the stovetops with stovetop cleaner",
   "Wipe the windowsill with Universal cleaner and a cloth",
   "Wipe the TV table",
   "Vacuum the floor",
   "Mop the floor",
-  "Wash dish towels, cloths, sponges, and hand towels at 90 degrees Celsius",
+  "Wash dish towels, cloths, sponges, and hand towels at 95 degrees Celsius",
   "Hang dish towels, cloths, sponges, and hand towels to dry or use a dryer",
   "Put dish towels, cloths, sponges, and hand towels back in the drawer when dry",
   "Take returnable bottles to a supermarket and buy relevant kitchen items",
@@ -51,11 +50,11 @@ export default async function Home() {
       </div>
 
       <div className="glass glass-panel">
-        <h3>Daily Tasks</h3>
+        <h3>Wednesday Tasks</h3>
         <ul className="task-list">
-          {dailyTasks.map((task, idx) => (
+          {wednesdayTasks.map((task, idx) => (
             <TaskItem 
-              key={`daily-${idx}`} 
+              key={`wednesday-${idx}`} 
               task={task} 
               completed={isCompleted(task)} 
               weekNumber={weekNumber} 
@@ -66,11 +65,11 @@ export default async function Home() {
       </div>
 
       <div className="glass glass-panel">
-        <h3>Weekly Tasks</h3>
+        <h3>Sunday Tasks</h3>
         <ul className="task-list">
-          {weeklyTasks.map((task, idx) => (
+          {sundayTasks.map((task, idx) => (
             <TaskItem 
-              key={`weekly-${idx}`} 
+              key={`sunday-${idx}`} 
               task={task} 
               completed={isCompleted(task)} 
               weekNumber={weekNumber} 
